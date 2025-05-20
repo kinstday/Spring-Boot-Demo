@@ -14,13 +14,11 @@
  * limitations under the License.
  */
 
-package org.example.spring.demos.web;
+package org.example.spring.demos.control;
 
+import org.example.spring.demos.web.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
@@ -57,7 +55,10 @@ public class BasicController {
     public String html() {
         return "index.html";
     }
-
+    @RequestMapping("/home")
+    public String home() {
+        return "index.html";
+    }
     @ModelAttribute
     public void parseUser(@RequestParam(name = "name", defaultValue = "unknown user") String name
             , @RequestParam(name = "age", defaultValue = "12") Integer age, User user) {
