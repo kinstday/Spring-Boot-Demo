@@ -16,7 +16,7 @@ public class OldSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests(auth -> auth
-                        .antMatchers("/login", "/public/**", "/static/**", "/api/**").permitAll() // 放行路径
+                        .antMatchers("/login", "/public/**", "/static/**", "/api/**","/actuator/**").permitAll() // 放行路径
                         .antMatchers("/admin/**").hasRole("ADMIN")                    // 角色控制
                         .anyRequest().authenticated()                                  // 其他请求需认证
                 )

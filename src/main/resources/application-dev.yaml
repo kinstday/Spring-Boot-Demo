@@ -24,3 +24,16 @@ spring:
     prefix: classpath:/templates/
     # 在构建 URL 时添加到视图名称后的后缀（默认值： .html ）
     suffix: .html
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "shutdown"
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+  health:
+    diskspace:
+      threshold: 10MB
